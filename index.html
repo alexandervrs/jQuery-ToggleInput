@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Example</title>
+		<style>
+*, *:after, *:before { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+	
+body {
+	font: 0.9em/1.2 'Arial', 'Helvetica', sans-serif;
+	background: #fff;
+	cursor: default;
+}
+		</style>
+		<link rel="stylesheet" href="jquery.toggleinput.css" />
+		<script src="jquery.min.js"></script>
+		<script src="jquery.toggleinput.min.js"></script>
+		<script>
+$(document).ready(function(){
+
+	$('input[type="checkbox"]').toggleInput();
+	
+	$('input[type="radio"]').toggleInput({
+		normalClass: "radio",
+		hoverClass:"radio-focused",
+		checkedClass:"radio-checked",
+		disabledClass:"radio-disabled"
+	});
+
+	$('.trigger1').on('click', function(){
+		$('#check1').toggleInput('toggle');
+	});
+	
+	$('.trigger2').on('click', function(){
+		$('#check1').toggleInput('uncheck');
+	});
+	
+	$('.trigger3').on('click', function(){
+		$('#check1').toggleInput('check');
+	});
+	
+	$('.trigger4').on('click', function(){
+		$('#check1').toggleInput('disable');
+	});
+	
+	$('.trigger5').on('click', function(){
+		$('#check1').toggleInput('enable');
+	});
+	
+	$('.trigger6').on('click', function(){
+		$('#check1').toggleInput('destroy');
+	});
+	
+});
+		</script>
+	</head>
+	<body>
+		<p>With No Label</p>
+		<input id="check1" tabindex="1" type="checkbox" checked="checked" />
+		<p>With Label</p>
+		<input id="check2" type="checkbox" /> <label for="check2">Label</label>
+		<p>Disabled</p>
+		<input id="check3" type="checkbox" disabled="disabled" />
+		<p>Disabled &amp; Checked</p>
+		<input id="check4" type="checkbox" checked="checked" disabled="disabled" />
+		<p>Radio Buttons</p>
+		<input id="radio1" name="check5" type="radio" value="1" checked="checked" /> <label for="radio1">With Label</label> <br />
+		<input id="radio2" name="check5" type="radio" value="2" /> With No Label<br />
+		<input id="radio3" name="check5" type="radio" value="3" disabled="disabled" /> Disabled <br />
+		
+		<p>Methods</p>
+		<p>
+			<button class="trigger1">Toggle checkbox 1</button>
+			<button class="trigger2">Uncheck checkbox 1</button>
+			<button class="trigger3">Check checkbox 1</button>
+			<button class="trigger4">Disable checkbox 1</button>
+			<button class="trigger5">Enable checkbox 1</button>
+			<button class="trigger6">Destroy checkbox 1</button>
+		</p>
+	</body>
+</html>
